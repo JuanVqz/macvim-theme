@@ -1,6 +1,6 @@
 {
 	"$schema": "vscode://schemas/color-theme",
-	"name": "MacVim Light",
+	"name": "MacVim Classic Light",
 	"type": "light",
 	"colors": {
 		"editor.background": "#ffffff",

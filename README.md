@@ -1,4 +1,4 @@
-# MacVim Theme
+# MacVim Classic Theme
 
 A VS Code theme inspired by MacVim's classic color scheme. This theme provides both dark and light versions with syntax highlighting that closely matches the MacVim editor.
 
@@ -16,7 +16,7 @@ This theme is based on the `macvim.vim` colorscheme used in the MacVim distribut
 
 1. Open VS Code
 2. Go to Extensions (Cmd+Shift+X / Ctrl+Shift+X)
-3. Search for "MacVim"
+3. Search for "MacVim Classic"
 4. Click Install
 
 ## Usage
@@ -25,15 +25,15 @@ After installation, select the theme:
 
 1. Open Command Palette (Cmd+Shift+P / Ctrl+Shift+P)
 2. Type "Preferences: Color Theme"
-3. Select "MacVim Dark" or "MacVim Light"
+3. Select "MacVim Classic Dark" or "MacVim Classic Light"
 
-Or go to: File > Preferences > Theme > Color Theme > MacVim Dark / MacVim Light
+Or go to: File > Preferences > Theme > Color Theme > MacVim Classic Dark / MacVim Classic Light
 
 ## Color Palette
 
 Based on the original MacVim colorscheme:
 
-### MacVim Dark
+### MacVim Classic Dark
 - Background: `#1a1a1a` (Grey10)
 - Foreground: `#808080` (Grey50)
 - Comments: `#5f9ea0` (CadetBlue3, italic)
@@ -46,7 +46,7 @@ Based on the original MacVim colorscheme:
 - Preprocessor: `#1874cd` (DodgerBlue3)
 - Special: `#8a2be2` (BlueViolet)
 
-### MacVim Light
+### MacVim Classic Light
 - Background: `#ffffff` (White)
 - Foreground: `#000000` (Black)
 - Comments: `#0000ee` (Blue2, italic)

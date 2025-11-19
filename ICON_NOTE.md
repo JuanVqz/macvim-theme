@@ -6,13 +6,13 @@ Before publishing, you need to add an `icon.png` file to the root of this extens
 
 - **Size**: 128x128 pixels (recommended)
 - **Format**: PNG
-- **Content**: A square icon representing the MacVim theme
+- **Content**: A square icon representing the MacVim Classic theme
 
 ## Creating an Icon
 
 You can:
 1. Create a simple icon using any image editor
-2. Use a MacVim-inspired design
+2. Use a MacVim Classic-inspired design
 3. Keep it simple and recognizable
 
 The icon will be displayed in the VS Code Marketplace and in the Extensions view.

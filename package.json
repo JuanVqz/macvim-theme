@@ -1,6 +1,6 @@
 {
-	"name": "macvim-theme",
-	"displayName": "MacVim",
+	"name": "macvim-classic-theme",
+	"displayName": "MacVim Classic",
 	"description": "A VS Code theme inspired by MacVim's classic color scheme (dark and light versions)",
 	"version": "1.0.0",
 	"publisher": "JuanVqz",
@@ -27,12 +27,12 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "MacVim Dark",
+				"label": "MacVim Classic Dark",
 				"uiTheme": "vs-dark",
 				"path": "./themes/macvim-dark-color-theme.json"
 			},
 			{
-				"label": "MacVim Light",
+				"label": "MacVim Classic Light",
 				"uiTheme": "vs",
 				"path": "./themes/macvim-light-color-theme.json"
 			}

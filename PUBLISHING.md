@@ -1,6 +1,6 @@
 # Publishing Guide
 
-This guide will help you publish the MacVim theme to the VS Code Marketplace.
+This guide will help you publish the MacVim Classic theme to the VS Code Marketplace.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ Before publishing, test the extension locally:
 2. **Test the Theme**
    - Open Command Palette (Cmd+Shift+P / Ctrl+Shift+P)
    - Type "Preferences: Color Theme"
-   - Select "MacVim"
+   - Select "MacVim Classic"
    - Verify the colors look correct
 
 ## Updating the Extension
