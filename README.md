@@ -1,10 +1,13 @@
 # MacVim Theme
 
-A VS Code theme inspired by MacVim's classic dark color scheme. This theme provides a comfortable dark environment for coding with syntax highlighting that closely matches the MacVim editor.
+A VS Code theme inspired by MacVim's classic color scheme. This theme provides both dark and light versions with syntax highlighting that closely matches the MacVim editor.
+
+This theme is based on the `macvim.vim` colorscheme used in the MacVim distribution, ensuring an authentic MacVim experience in VS Code.
 
 ## Features
 
-- Dark theme optimized for long coding sessions
+- Dark and light theme variants
+- Optimized for long coding sessions
 - Syntax highlighting for popular programming languages
 - MacVim-inspired color palette
 - Easy on the eyes with good contrast
@@ -22,19 +25,39 @@ After installation, select the theme:
 
 1. Open Command Palette (Cmd+Shift+P / Ctrl+Shift+P)
 2. Type "Preferences: Color Theme"
-3. Select "MacVim"
+3. Select "MacVim Dark" or "MacVim Light"
 
-Or go to: File > Preferences > Theme > Color Theme > MacVim
+Or go to: File > Preferences > Theme > Color Theme > MacVim Dark / MacVim Light
 
 ## Color Palette
 
-- Background: `#1e1e1e`
-- Foreground: `#cccccc`
-- Comments: `#6a9955` (green)
-- Strings: `#ce9178` (orange)
-- Keywords: `#569cd6` (blue)
-- Functions: `#dcdcaa` (yellow)
-- Types: `#4ec9b0` (cyan)
+Based on the original MacVim colorscheme:
+
+### MacVim Dark
+- Background: `#1a1a1a` (Grey10)
+- Foreground: `#808080` (Grey50)
+- Comments: `#5f9ea0` (CadetBlue3, italic)
+- Strings: `#4a708b` (SkyBlue4)
+- Keywords/Statements: `#9b30ff` (Purple1, bold)
+- Types: `#008b8b` (Cyan4, bold)
+- Constants: `#ffc125` (Goldenrod1)
+- Identifiers: `#458b74` (Aquamarine4)
+- Functions: `#458b74` (Aquamarine4)
+- Preprocessor: `#1874cd` (DodgerBlue3)
+- Special: `#8a2be2` (BlueViolet)
+
+### MacVim Light
+- Background: `#ffffff` (White)
+- Foreground: `#000000` (Black)
+- Comments: `#0000ee` (Blue2, italic)
+- Strings: `#4a708b` (SkyBlue4)
+- Keywords/Statements: `#800000` (Maroon, bold)
+- Types: `#008b00` (Green4, bold)
+- Constants: `#ff8c00` (DarkOrange)
+- Identifiers: `#458b74` (Aquamarine4)
+- Functions: `#458b74` (Aquamarine4)
+- Preprocessor: `#1874cd` (DodgerBlue3)
+- Special: `#8a2be2` (BlueViolet)
 
 ## Contributing
 
