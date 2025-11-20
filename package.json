@@ -2,7 +2,7 @@
 	"name": "macvim-classic-theme",
 	"displayName": "MacVim Classic",
 	"description": "A VS Code theme inspired by MacVim's classic color scheme (dark and light versions)",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "JuanVqz",
 	"license": "MIT",
 	"engines": {
