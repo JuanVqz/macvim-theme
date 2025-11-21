@@ -2,9 +2,10 @@
 
 A VS Code theme inspired by MacVim's classic color scheme. This theme provides both dark and light versions with syntax highlighting that closely matches the MacVim editor.
 
-This theme is based on the [`macvim.vim`](https://github.com/juanvqz/macvim-theme/blob/main/assets/macvim.vim) colorscheme used in the MacVim distribution, ensuring an authentic MacVim experience in VS Code.
+This theme is based on the [`macvim.vim`](https://github.com/juanvqz/macvim-theme/blob/main/static/macvim.vim) colorscheme used in the MacVim distribution, ensuring an authentic MacVim experience in VS Code.
 
-![MacVim Classic Theme](assets/macvim.png)
+![static/macvim](https://raw.githubusercontent.com/JuanVqz/macvim-theme/main/static/macvim.png "MacVim Classic Theme")
+
 
 ## Features
 
