@@ -15,6 +15,8 @@ Install "MacVim Classic" from the VS Code Marketplace. Packaging and publishing 
 
 ## Zed
 
+![MacVim Light and MacVim Dark in Zed](static/zed.png "MacVim for Zed")
+
 The theme lives in [`zed/themes/macvim.json`](zed/themes/macvim.json). To use it locally, link it into Zed's themes folder:
 
 ```bash
@@ -28,6 +30,12 @@ The JSON is generated. Edit the palette in [`zed/generate.rb`](zed/generate.rb) 
 
 ```bash
 ruby zed/generate.rb
+```
+
+Then refresh the preview image (`static/zed.png`, rendered from the theme with headless Google Chrome):
+
+```bash
+ruby zed/preview.rb
 ```
 
 - **MacVim Light** follows `macvim.vim` exactly (`background=light`).

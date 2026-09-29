@@ -10,6 +10,7 @@ MacVim-inspired dark and light color schemes for VS Code (`vscode/`) and Zed (`z
 cd vscode && npm run package   # Create .vsix package using vsce
 cd vscode && npm run publish   # Publish to VS Code Marketplace
 ruby zed/generate.rb           # Regenerate zed/themes/macvim.json
+ruby zed/preview.rb            # Re-render static/zed.png (needs Google Chrome)
 ```
 
 ### Testing
@@ -87,11 +88,14 @@ macvim-theme/
 ├── zed/                      # Zed theme extension
 │   ├── extension.toml
 │   ├── generate.rb           # Palette source, writes themes/macvim.json
+│   ├── preview.rb            # Renders static/zed.png
 │   └── themes/macvim.json    # Generated, do not edit by hand
 ├── static/
 │   ├── macvim.vim            # Reference colorscheme
-│   └── macvim.png            # Screenshot
+│   ├── macvim.png            # VS Code screenshot
+│   └── zed.png               # Zed preview, rendered by zed/preview.rb
 └── samples/
+    ├── preview.rb            # Sample rendered in static/zed.png
     └── user.rb               # Preview sample
 ```
 
