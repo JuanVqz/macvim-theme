@@ -2,6 +2,8 @@
 
 This guide will help you publish the MacVim Classic theme to the VS Code Marketplace.
 
+Run every `vsce` and `npm` command below from this `vscode/` folder, where `package.json` lives.
+
 ## Prerequisites
 
 1. **Install vsce (VS Code Extension Manager)**
