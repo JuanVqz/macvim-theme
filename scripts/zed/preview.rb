@@ -3,13 +3,13 @@
 # MacVim Light and MacVim Dark, using the colors in zed/themes/macvim.json.
 # Tokens come from Ripper and are mapped to the captures Zed's Ruby grammar
 # uses, so highlighting is close to, but not exactly, what Zed shows.
-# Run: ruby zed/preview.rb  (needs Google Chrome)
+# Run: ruby scripts/zed/preview.rb  (needs Google Chrome)
 require "cgi"
 require "json"
 require "ripper"
 require "tmpdir"
 
-ROOT = File.expand_path("..", __dir__)
+ROOT = File.expand_path("../..", __dir__)
 THEME = JSON.parse(File.read(File.join(ROOT, "zed", "themes", "macvim.json")))
 SAMPLE = File.join(ROOT, "samples", "preview.rb")
 OUTPUT = File.join(ROOT, "static", "zed.png")

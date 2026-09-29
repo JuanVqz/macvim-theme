@@ -26,16 +26,16 @@ ln -s "$PWD/zed/themes/macvim.json" ~/.config/zed/themes/macvim.json
 
 Then pick "MacVim Light" or "MacVim Dark" from `theme selector: toggle`.
 
-The JSON is generated. Edit the palette in [`zed/generate.rb`](zed/generate.rb) and run:
+The JSON is generated. Edit the palette in [`scripts/zed/generate.rb`](scripts/zed/generate.rb) and run:
 
 ```bash
-ruby zed/generate.rb
+ruby scripts/zed/generate.rb
 ```
 
 Then refresh the preview image (`static/zed.png`, rendered from the theme with headless Google Chrome):
 
 ```bash
-ruby zed/preview.rb
+ruby scripts/zed/preview.rb
 ```
 
 - **MacVim Light** follows `macvim.vim` exactly (`background=light`).

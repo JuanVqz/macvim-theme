@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # Generates zed/themes/macvim.json from the colors in static/macvim.vim.
-# Run: ruby zed/generate.rb
+# Run: ruby scripts/zed/generate.rb
 # Hex values were resolved by nvim itself (`nvim_get_hl` after sourcing the file).
 require "json"
 
@@ -313,4 +313,4 @@ theme = {
   ]
 }
 
-File.write(File.join(__dir__, "themes", "macvim.json"), JSON.pretty_generate(theme) + "\n")
+File.write(File.expand_path("../../zed/themes/macvim.json", __dir__), JSON.pretty_generate(theme) + "\n")
