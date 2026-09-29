@@ -1,0 +1,115 @@
+# Agent Guidelines for macvim-theme
+
+## Project Overview
+VS Code theme extension providing MacVim-inspired dark and light color schemes. This is a JSON-only theme project with no build pipeline, tests, or runtime code.
+
+## Commands
+
+### Build & Packaging
+```bash
+npm run package   # Create .vsix package using vsce
+npm run publish   # Publish to VS Code Marketplace
+```
+
+### Testing
+No automated tests exist. Theme validation is manual:
+- Install the .vsix package in VS Code
+- Test with various programming languages
+- Verify syntax highlighting matches MacVim reference
+
+### Linting/Formatting
+No linting tools configured. JSON files should follow VS Code theme schema.
+
+## Code Style Guidelines
+
+### JSON Format
+- **Indentation**: Use tabs (not spaces)
+- **Trailing commas**: Never include trailing commas in JSON
+- **Quote style**: Double quotes only
+- **Spacing**: No spaces in hex color codes (use `#1a1a1a`, not `#1a1a1a `)
+
+### Theme Structure
+Theme files follow VS Code theme schema:
+- `$schema`: `"vscode://schemas/color-theme"`
+- `name`: Display name (e.g., "MacVim Classic Dark")
+- `type`: `"dark"` or `"light"`
+- `colors`: Editor UI color mapping
+- `tokenColors`: Syntax highlighting rules
+
+### Color Values
+- Use 6-character hex codes: `#RRGGBB`
+- For opacity, append 2-digit alpha: `#RRGGBBAA`
+  - Example: `"#72f7ff40"` for 25% opacity
+
+### Token Color Entries
+Each token color rule:
+```json
+{
+  "name": "Descriptive Name",
+  "scope": ["scope1", "scope2", "scope3"],
+  "settings": {
+    "foreground": "#hexcode",
+    "fontStyle": "bold|italic|underline"  // optional
+  }
+}
+```
+
+**Naming conventions:**
+- Use descriptive names: "Comment", "String", "Function"
+- Group related scopes in array format
+- Order logically: Comments → Strings → Numbers → Keywords → Functions → Types
+
+### Scope Matching
+- Use VS Code TextMate scope syntax
+- Prefer broader scopes when appropriate (e.g., `"string"` over `"string.quoted.double"`)
+- Test across multiple languages to verify scope coverage
+
+### Color Consistency
+Maintain consistency between dark and light themes:
+- Keep same semantic colors (comments, strings, keywords)
+- Adjust contrast ratios for readability
+- Reference `static/macvim.vim` for original colors
+
+## File Organization
+
+```
+macvim-theme/
+├── package.json              # Extension manifest
+├── themes/
+│   ├── macvim-dark-color-theme.json   # Dark theme
+│   └── macvim-light-color-theme.json  # Light theme
+├── static/
+│   ├── macvim.vim            # Reference colorscheme
+│   └── macvim.png            # Screenshot
+└── samples/
+    └── user.rb               # Preview sample
+```
+
+## Package.json Maintenance
+
+When updating versions:
+- Increment version in `package.json`
+- Update `CHANGELOG.md` with changes
+- Test both dark and light variants
+
+## Workflow for Theme Updates
+
+1. Update color values in theme JSON files
+2. Install locally: `code --install-extension macvim-classic-theme-*.vsix`
+3. Test with various file types (`.rb`, `.js`, `.py`, `.ts`, `.css`, `.md`)
+4. Compare with `static/macvim.vim` reference
+5. Update screenshots if visual changes occurred
+6. Update `package.json` version
+7. Run `npm run package`
+8. Test the packaged .vsix file
+
+## No Tests or CI
+This project does not have automated testing or CI/CD. Quality assurance is manual testing of the theme in VS Code across different programming languages and file types.
+
+## Publishing
+Before publishing:
+- Verify all color definitions
+- Check for unused or duplicate token rules
+- Test in a fresh VS Code environment
+- Update CHANGELOG.md
+- Increment version in package.json
