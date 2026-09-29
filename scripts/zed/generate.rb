@@ -138,29 +138,56 @@ def syntax(c)
   }
 end
 
+# ANSI colors for the integrated terminal, each taken from a macvim.vim group
+# of the same variant so shell output matches the editor.
+TERMINAL = {
+  dark: {
+    "black" => "#333333",          # CursorLine    Gray20 (orig)
+    "red" => "#ee2c2c",            # ErrorMsg      Firebrick2
+    "green" => "#3cb371",          # DiffAdd       MediumSeaGreen
+    "yellow" => "#ffc125",         # Constant      Goldenrod1
+    "blue" => "#1e90ff",           # PreProc       DodgerBlue1
+    "magenta" => "#ab82ff",        # Statement     MediumPurple1
+    "cyan" => "#7ac5cd",           # Comment       CadetBlue3
+    "white" => "#cccccc",          # Normal        Grey80
+    "bright_black" => "#7f7f7f",   # Normal        Grey50 (orig)
+    "bright_red" => "#ee6aa7",     # Boolean       HotPink2
+    "bright_green" => "#b4eeb4",   # Type          DarkSeaGreen2
+    "bright_yellow" => "#eedd82",  # Cursor        LightGoldenrod
+    "bright_blue" => "#7ec0ee",    # String        SkyBlue2
+    "bright_magenta" => "#e066ff", # Special       MediumOrchid1
+    "bright_cyan" => "#98f5ff",    # Search        CadetBlue1 (light)
+    "bright_white" => "#ffffff"
+  },
+  light: {
+    "black" => "#000000",          # Normal        Black
+    "red" => "#cd0000",            # Boolean       Red3
+    "green" => "#008b00",          # Type          Green4
+    "yellow" => "#cd6600",         # DarkOrange3, a readable Constant DarkOrange
+    "blue" => "#0000ee",           # Comment       Blue2
+    "magenta" => "#8a2be2",        # Special       BlueViolet
+    "cyan" => "#008b8b",           # Type (dark)   Cyan4
+    "white" => "#888888",          # LineNr
+    "bright_black" => "#708090",   # StatusLineNC  SlateGray
+    "bright_red" => "#ee2c2c",     # ErrorMsg      Firebrick2
+    "bright_green" => "#2e8b57",   # MoreMsg       SeaGreen4
+    "bright_yellow" => "#ff8c00",  # Constant      DarkOrange
+    "bright_blue" => "#1874cd",    # PreProc       DodgerBlue3
+    "bright_magenta" => "#800000", # Statement     Maroon
+    "bright_cyan" => "#009acd",    # Title         DeepSkyBlue3
+    "bright_white" => "#bebebe"    # FoldColumn    Grey
+  }
+}.freeze
+
 def terminal(c, dark)
+  ansi = TERMINAL.fetch(dark ? :dark : :light)
+  dims = ansi.reject { |name, _| name.start_with?("bright_") }.to_h { |name, color| ["dim_#{name}", "#{color}b3"] }
   {
     "terminal.background" => c[:normal_bg],
     "terminal.foreground" => c[:normal_fg],
-    "terminal.bright_foreground" => dark ? "#e5e5e5" : "#000000",
-    "terminal.dim_foreground" => dark ? "#555555" : "#7f7f7f",
-    "terminal.ansi.black" => dark ? "#1a1a1a" : "#000000",
-    "terminal.ansi.red" => c[:error],
-    "terminal.ansi.green" => "#008b00",
-    "terminal.ansi.yellow" => c[:constant],
-    "terminal.ansi.blue" => c[:preproc],
-    "terminal.ansi.magenta" => c[:special],
-    "terminal.ansi.cyan" => "#008b8b",
-    "terminal.ansi.white" => "#bebebe",
-    "terminal.ansi.bright_black" => "#7f7f7f",
-    "terminal.ansi.bright_red" => c[:error_msg],
-    "terminal.ansi.bright_green" => c[:diff_add],
-    "terminal.ansi.bright_yellow" => dark ? "#eedd82" : "#ffc125",
-    "terminal.ansi.bright_blue" => c[:underlined],
-    "terminal.ansi.bright_magenta" => "#9b30ff",
-    "terminal.ansi.bright_cyan" => "#7ac5cd",
-    "terminal.ansi.bright_white" => "#ffffff"
-  }
+    "terminal.bright_foreground" => dark ? "#ffffff" : "#000000",
+    "terminal.dim_foreground" => dark ? "#7f7f7f" : "#708090"
+  }.merge(ansi.merge(dims).transform_keys { |name| "terminal.ansi.#{name}" })
 end
 
 def style(c, dark:)
